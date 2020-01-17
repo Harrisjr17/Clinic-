@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Firstname</th>
+      <th>Middlename</th>
+      <th>Surname</th>
+      <th>Gender</th>
+      <th>Phonenumber</th>
+      <th>Dob</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.title %></td>
+        <td><%= patient.firstname %></td>
+        <td><%= patient.middlename %></td>
+        <td><%= patient.surname %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.phonenumber %></td>
+        <td><%= patient.dob %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Register New Patient', new_patient_path %>

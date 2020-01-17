@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :categories
-  resources :hosts
-  resources :posts
+  resources :patients
 
-  # this sets the default page where the website loads to
-  root to: 'posts#index'
+  # # this sets the default page where the website loads to
+   root to: 'patients#index'
 
 end
